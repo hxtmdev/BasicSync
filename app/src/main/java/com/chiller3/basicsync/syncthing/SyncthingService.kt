@@ -396,7 +396,7 @@ class SyncthingService : Service(), SyncthingStatusReceiver,
                     }
                 }
 
-                val notification = notifications.createKeepAliveNotification(notificationState)
+                val notification = notifications.createPersistentNotification(notificationState)
                 val type = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
                     ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE
                 } else {

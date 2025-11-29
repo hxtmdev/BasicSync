@@ -60,7 +60,7 @@ class Notifications(private val context: Context) {
         LEGACY_CHANNEL_IDS.forEach { notificationManager.deleteNotificationChannel(it) }
     }
 
-    fun createKeepAliveNotification(state: SyncthingService.ServiceState): Notification {
+    fun createPersistentNotification(state: SyncthingService.ServiceState): Notification {
         val titleResId = when (state.runState) {
             SyncthingService.RunState.RUNNING -> R.string.notification_persistent_running_title
             SyncthingService.RunState.NOT_RUNNING -> R.string.notification_persistent_not_running_title
