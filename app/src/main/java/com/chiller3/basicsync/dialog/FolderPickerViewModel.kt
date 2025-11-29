@@ -66,7 +66,7 @@ class FolderPickerViewModel : ViewModel() {
 
                 // Don't allow paths outside of the internal storage. They aren't readable anyway.
                 var relPath = newCwd.toRelativeString(EXTERNAL_DIR)
-                if (relPath == ".." || relPath.startsWith("../")) {
+                if (relPath == ".." || relPath.startsWith("../") || !newCwd.isDirectory) {
                     newCwd = EXTERNAL_DIR
                     relPath = ""
                 }
