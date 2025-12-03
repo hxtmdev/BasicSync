@@ -46,9 +46,7 @@ class SyncthingService : Service(), SyncthingStatusReceiver,
         val ACTION_STOP = "${SyncthingService::class.java.canonicalName}.stop"
         val ACTION_RENOTIFY = "${SyncthingService::class.java.canonicalName}.renotify"
 
-        // We can't query config_lowBatteryWarningLevel due to Android's hidden API restrictions, so
-        // just use AOSP's default.
-        private const val LOW_BATTERY_LIMIT = 20
+        private const val LOW_BATTERY_LIMIT = 95
 
         fun createIntent(context: Context, action: String?) =
             Intent(context, SyncthingService::class.java).apply {
